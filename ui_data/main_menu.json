@@ -184,7 +184,13 @@
       "x_padding": 0,
       "y_padding": 0
     },
-    "event_data": {},
+    "event_data": {
+      "game_start": {
+        "function_path": "events.menu_events:start_game",
+        "event_type": "leftclick",
+        "args": []
+      }
+    },
     "text_data": {
       "font": "pixal_35",
       "text": "Start",

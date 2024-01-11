@@ -32,6 +32,11 @@ def toggle_shop(_):
     Designer.toggle_exclude("shop_menu")
 
 
+def start_game(_):
+    """start the game"""
+    Designer.toggle_exclude("main_menu")
+
+
 def calc_price(base: int, level: int) -> int:
     """
     Calculate the upgrade price
