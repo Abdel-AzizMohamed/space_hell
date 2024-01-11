@@ -2,26 +2,22 @@
   "background": {
     "base_data": {
       "name": "background",
-      "group": "main_menu",
-      "class": "PyRect"
+      "group": "global",
+      "class": "PyImage"
     },
     "rect_data": {
       "anchor_point": "topleft",
       "x_pos": 0,
       "y_pos": 0,
-      "x_size": 32,
-      "y_size": 18,
       "x_offset": 0,
-      "y_offset": 0,
-      "x_padding": 0,
-      "y_padding": 0
+      "y_offset": 0
     },
     "event_data": {},
     "text_data": {
       "font": "pixal_35",
       "text": "",
       "antialias": false,
-      "color": "#ff0000",
+      "color": "#ffffff",
       "align": "top"
     },
     "transition_data": {
@@ -33,12 +29,242 @@
       "during_functions": [],
       "before_functions": [],
       "start_x": null,
-      "end_x": 1366,
+      "end_x": null,
+      "start_y": null,
+      "end_y": null
+    },
+    "image_data": {
+      "image": "bg"
+    },
+    "obj_data": {
+      "opacity": false
+    }
+  },
+  "overlay": {
+    "base_data": {
+      "name": "overlay",
+      "group": "main_menu",
+      "class": "PyImage"
+    },
+    "rect_data": {
+      "anchor_point": "topleft",
+      "x_pos": 0,
+      "y_pos": 0,
+      "x_offset": 0,
+      "y_offset": 0
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_35",
+      "text": "",
+      "antialias": false,
+      "color": "#ffffff",
+      "align": "top"
+    },
+    "transition_data": {
+      "duration": 0,
+      "delay": 0,
+      "repeat": -1,
+      "transition_function": "liner",
+      "after_functions": [],
+      "during_functions": [],
+      "before_functions": [],
+      "start_x": null,
+      "end_x": null,
+      "start_y": null,
+      "end_y": null
+    },
+    "image_data": {
+      "image": "overlay"
+    },
+    "obj_data": {
+      "opacity": false
+    }
+  },
+  "title": {
+    "base_data": {
+      "name": "title",
+      "group": "main_menu",
+      "class": "PyRect"
+    },
+    "rect_data": {
+      "anchor_point": "topleft",
+      "x_pos": 1,
+      "y_pos": 2,
+      "x_size": 6,
+      "y_size": 1,
+      "x_offset": 0,
+      "y_offset": 0,
+      "x_padding": 0,
+      "y_padding": 0
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_80",
+      "text": "Space Hell",
+      "antialias": false,
+      "color": "#ffffff",
+      "align": "center"
+    },
+    "transition_data": {
+      "duration": 0,
+      "delay": 0,
+      "repeat": -1,
+      "transition_function": "liner",
+      "after_functions": [],
+      "during_functions": [],
+      "before_functions": [],
+      "start_x": null,
+      "end_x": null,
       "start_y": null,
       "end_y": null
     },
     "obj_data": {
+      "color": "transparent",
+      "opacity": false
+    }
+  },
+  "start": {
+    "base_data": {
+      "name": "start",
+      "group": "main_menu",
+      "class": "PyButton"
+    },
+    "rect_data": {
+      "anchor_point": "topleft",
+      "x_pos": 2,
+      "y_pos": 6,
+      "x_size": 4,
+      "y_size": 1,
+      "x_offset": 0,
+      "y_offset": 0,
+      "x_padding": 0,
+      "y_padding": 0
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_35",
+      "text": "Start",
+      "antialias": false,
       "color": "#333333",
+      "align": "center"
+    },
+    "transition_data": {
+      "duration": 0,
+      "delay": 0,
+      "repeat": -1,
+      "transition_function": "liner",
+      "after_functions": [],
+      "during_functions": [],
+      "before_functions": [],
+      "start_x": null,
+      "end_x": null,
+      "start_y": null,
+      "end_y": null
+    },
+    "obj_data": {
+      "active": false,
+      "disabled": false,
+      "base_color": "#ffffff",
+      "hover_color": "#dddddd",
+      "select_color": "#aaaaaa",
+      "disabled_color": "#000000",
+      "opacity": false
+    }
+  },
+  "shop": {
+    "base_data": {
+      "name": "shop",
+      "group": "main_menu",
+      "class": "PyButton"
+    },
+    "rect_data": {
+      "anchor_point": "topleft",
+      "x_pos": 2,
+      "y_pos": 8,
+      "x_size": 4,
+      "y_size": 1,
+      "x_offset": 0,
+      "y_offset": 0,
+      "x_padding": 0,
+      "y_padding": 0
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_35",
+      "text": "Shop",
+      "antialias": false,
+      "color": "#333333",
+      "align": "center"
+    },
+    "transition_data": {
+      "duration": 0,
+      "delay": 0,
+      "repeat": -1,
+      "transition_function": "liner",
+      "after_functions": [],
+      "during_functions": [],
+      "before_functions": [],
+      "start_x": null,
+      "end_x": null,
+      "start_y": null,
+      "end_y": null
+    },
+    "obj_data": {
+      "active": false,
+      "disabled": false,
+      "base_color": "#ffffff",
+      "hover_color": "#dddddd",
+      "select_color": "#aaaaaa",
+      "disabled_color": "#000000",
+      "opacity": false
+    }
+  },
+  "exit": {
+    "base_data": {
+      "name": "exit",
+      "group": "main_menu",
+      "class": "PyButton"
+    },
+    "rect_data": {
+      "anchor_point": "topleft",
+      "x_pos": 2,
+      "y_pos": 10,
+      "x_size": 4,
+      "y_size": 1,
+      "x_offset": 0,
+      "y_offset": 0,
+      "x_padding": 0,
+      "y_padding": 0
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_35",
+      "text": "Exit",
+      "antialias": false,
+      "color": "#333333",
+      "align": "center"
+    },
+    "transition_data": {
+      "duration": 0,
+      "delay": 0,
+      "repeat": -1,
+      "transition_function": "liner",
+      "after_functions": [],
+      "during_functions": [],
+      "before_functions": [],
+      "start_x": null,
+      "end_x": null,
+      "start_y": null,
+      "end_y": null
+    },
+    "obj_data": {
+      "active": false,
+      "disabled": false,
+      "base_color": "#ffffff",
+      "hover_color": "#dddddd",
+      "select_color": "#aaaaaa",
+      "disabled_color": "#000000",
       "opacity": false
     }
   }

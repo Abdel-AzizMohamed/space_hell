@@ -7,6 +7,7 @@
     "alpha": false
   },
   "fonts_data": {
+    "pixal_80": { "font_path": "fonts/Pixeltype.ttf", "font_size": 80 },
     "pixal_35": { "font_path": "fonts/Pixeltype.ttf", "font_size": 35 },
     "pixal_15": { "font_path": "fonts/Pixeltype.ttf", "font_size": 15 }
   },
