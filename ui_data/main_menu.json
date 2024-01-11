@@ -1,0 +1,45 @@
+{
+  "background": {
+    "base_data": {
+      "name": "background",
+      "group": "main_menu",
+      "class": "PyRect"
+    },
+    "rect_data": {
+      "anchor_point": "topleft",
+      "x_pos": 0,
+      "y_pos": 0,
+      "x_size": 32,
+      "y_size": 18,
+      "x_offset": 0,
+      "y_offset": 0,
+      "x_padding": 0,
+      "y_padding": 0
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_35",
+      "text": "",
+      "antialias": false,
+      "color": "#ff0000",
+      "align": "top"
+    },
+    "transition_data": {
+      "duration": 0,
+      "delay": 0,
+      "repeat": -1,
+      "transition_function": "liner",
+      "after_functions": [],
+      "during_functions": [],
+      "before_functions": [],
+      "start_x": null,
+      "end_x": 1366,
+      "start_y": null,
+      "end_y": null
+    },
+    "obj_data": {
+      "color": "#333333",
+      "opacity": false
+    }
+  }
+}

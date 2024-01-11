@@ -1,0 +1,10 @@
+# tmp files
+*.swp
+.vscode/
+cspell.json
+
+# Python ignore
+*.pyc
+
+#linux ignore
+*.sh

@@ -1,0 +1,33 @@
+name: main_action
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python 3.11.4
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.11.4
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install pylint
+        pip install black
+        pip install pytest
+
+    - name: Analysing the code with pylint
+      run: |
+        pylint pyengine/
+
