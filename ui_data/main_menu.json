@@ -21,7 +21,50 @@
       "align": "top"
     },
     "transition_data": {
-      "duration": 0,
+      "duration": 12,
+      "delay": 0,
+      "repeat": -1,
+      "transition_function": "liner",
+      "after_functions": [
+        { "import": "events.menu_events:background_repeat", "args": [] }
+      ],
+      "during_functions": [],
+      "before_functions": [],
+      "start_x": null,
+      "end_x": null,
+      "start_y": 0,
+      "end_y": 768
+    },
+    "image_data": {
+      "image": "bg"
+    },
+    "obj_data": {
+      "opacity": false
+    }
+  },
+  "background_2": {
+    "base_data": {
+      "name": "background_2",
+      "group": "global",
+      "class": "PyImage"
+    },
+    "rect_data": {
+      "anchor_point": "topleft",
+      "x_pos": 0,
+      "y_pos": 0,
+      "x_offset": 0,
+      "y_offset": 0
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_35",
+      "text": "",
+      "antialias": false,
+      "color": "#ffffff",
+      "align": "top"
+    },
+    "transition_data": {
+      "duration": 24,
       "delay": 0,
       "repeat": -1,
       "transition_function": "liner",
@@ -30,8 +73,8 @@
       "before_functions": [],
       "start_x": null,
       "end_x": null,
-      "start_y": null,
-      "end_y": null
+      "start_y": -768,
+      "end_y": 768
     },
     "image_data": {
       "image": "bg"

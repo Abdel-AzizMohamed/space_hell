@@ -62,7 +62,7 @@ class Designer:
 
             Eventer.exclude_groups[ele_group] = 1
 
-            Transition.elements[ele_group] = []
+            Transition.elements[ele_group] = {}
             Transition.exclude_groups[ele_group] = 1
 
         Eventer.add_object_event(element, event_data)

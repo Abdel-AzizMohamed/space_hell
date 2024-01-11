@@ -49,7 +49,7 @@ class Transition:
         self.end_y = attributes.get("end_y")
 
         if self.duration >= 1:
-            Transition.elements[element.group].append(self)
+            Transition.elements[element.group][element.name] = self
 
         for data in self.before_functions:
             check_import(data.get("import"))(self.element, *data.get("args"))
@@ -60,7 +60,7 @@ class Transition:
         elements = [
             element
             for (name, group) in Transition.elements.items()
-            for element in group
+            for element in group.values()
             if Transition.exclude_groups.get(name)
         ]
 

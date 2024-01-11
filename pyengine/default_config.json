@@ -41,8 +41,13 @@
       "args": ["show_object_rect"]
     }
   },
-  "sounds_data": {},
-  "music_data": {},
+  "sounds_data": {
+    "pong": { "sound_path": "sounds/pong.ogg", "sound_volume": 0.5 }
+  },
+  "music_data": {
+    "bgm1": { "music_path": "sounds/bgm1.mp3", "music_volume": 0.5 },
+    "bgm2": { "music_path": "sounds/bgm2.mp3", "music_volume": 0.5 }
+  },
   "groups_data": {
     "main_menu": 1,
     "gameplay": 1,
