@@ -237,6 +237,11 @@
         "function_path": "events.menu_events:toggle_shop",
         "event_type": "leftclick",
         "args": []
+      },
+      "refresh_upgrades": {
+        "function_path": "events.menu_events:refresh_upgrades",
+        "event_type": "leftclick",
+        "args": []
       }
     },
     "text_data": {
@@ -383,10 +388,16 @@
       "x_padding": 0,
       "y_padding": 0
     },
-    "event_data": {},
+    "event_data": {
+      "buy_upgrade": {
+        "function_path": "events.menu_events:buy_upgrade",
+        "event_type": "leftclick",
+        "args": ["hp_upgrade"]
+      }
+    },
     "text_data": {
       "font": "pixal_35",
-      "text": "HP Upgrade Level 1",
+      "text": "HP Upgrade Level 1 $30",
       "antialias": false,
       "color": "#333333",
       "align": "center"
@@ -431,10 +442,16 @@
       "x_padding": 0,
       "y_padding": 0
     },
-    "event_data": {},
+    "event_data": {
+      "buy_upgrade": {
+        "function_path": "events.menu_events:buy_upgrade",
+        "event_type": "leftclick",
+        "args": ["damage_upgrade"]
+      }
+    },
     "text_data": {
       "font": "pixal_35",
-      "text": "Damage Upgrade Level 1",
+      "text": "Damage Upgrade Level 1 $50",
       "antialias": false,
       "color": "#333333",
       "align": "center"
@@ -479,10 +496,16 @@
       "x_padding": 0,
       "y_padding": 0
     },
-    "event_data": {},
+    "event_data": {
+      "buy_upgrade": {
+        "function_path": "events.menu_events:buy_upgrade",
+        "event_type": "leftclick",
+        "args": ["speed_upgrade"]
+      }
+    },
     "text_data": {
       "font": "pixal_35",
-      "text": "Speed Upgrade Level 1",
+      "text": "Speed Upgrade Level 1 $20",
       "antialias": false,
       "color": "#333333",
       "align": "center"
@@ -527,10 +550,16 @@
       "x_padding": 0,
       "y_padding": 0
     },
-    "event_data": {},
+    "event_data": {
+      "buy_upgrade": {
+        "function_path": "events.menu_events:buy_upgrade",
+        "event_type": "leftclick",
+        "args": ["firerate_upgrade"]
+      }
+    },
     "text_data": {
       "font": "pixal_35",
-      "text": "FireRate Upgrade Level 1",
+      "text": "FireRate Upgrade Level 1 $40",
       "antialias": false,
       "color": "#333333",
       "align": "center"
@@ -575,10 +604,16 @@
       "x_padding": 0,
       "y_padding": 0
     },
-    "event_data": {},
+    "event_data": {
+      "buy_upgrade": {
+        "function_path": "events.menu_events:buy_upgrade",
+        "event_type": "leftclick",
+        "args": ["bullet_upgrade"]
+      }
+    },
     "text_data": {
       "font": "pixal_35",
-      "text": "Bullet Upgrade Level 1",
+      "text": "Bullet Upgrade Level 1 $70",
       "antialias": false,
       "color": "#333333",
       "align": "center"
