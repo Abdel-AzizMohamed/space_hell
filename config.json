@@ -45,9 +45,9 @@
   "sounds_data": {},
   "music_data": {},
   "groups_data": {
+    "global": 1,
     "main_menu": 1,
-    "gameplay": 1,
-    "boxGroup": 1
+    "shop_menu": 0
   },
   "path_data": {
     "save_data_path": "save_data",

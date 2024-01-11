@@ -232,7 +232,13 @@
       "x_padding": 0,
       "y_padding": 0
     },
-    "event_data": {},
+    "event_data": {
+      "display_shop": {
+        "function_path": "events.menu_events:toggle_shop",
+        "event_type": "leftclick",
+        "args": []
+      }
+    },
     "text_data": {
       "font": "pixal_35",
       "text": "Shop",
@@ -290,6 +296,289 @@
     "text_data": {
       "font": "pixal_35",
       "text": "Exit",
+      "antialias": false,
+      "color": "#333333",
+      "align": "center"
+    },
+    "transition_data": {
+      "duration": 0,
+      "delay": 0,
+      "repeat": -1,
+      "transition_function": "liner",
+      "after_functions": [],
+      "during_functions": [],
+      "before_functions": [],
+      "start_x": null,
+      "end_x": null,
+      "start_y": null,
+      "end_y": null
+    },
+    "obj_data": {
+      "active": false,
+      "disabled": false,
+      "base_color": "#ffffff",
+      "hover_color": "#dddddd",
+      "select_color": "#aaaaaa",
+      "disabled_color": "#000000",
+      "opacity": false
+    }
+  },
+  "shop_panel": {
+    "base_data": {
+      "name": "shop_panel",
+      "group": "shop_menu",
+      "class": "PyRect"
+    },
+    "rect_data": {
+      "anchor_point": "topleft",
+      "x_pos": 8,
+      "y_pos": 5,
+      "x_size": 16,
+      "y_size": 9,
+      "x_offset": 0,
+      "y_offset": 0,
+      "x_padding": 0,
+      "y_padding": 0
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_35",
+      "text": "Shop",
+      "antialias": false,
+      "color": "#ffffff",
+      "align": "top"
+    },
+    "transition_data": {
+      "duration": 0,
+      "delay": 0,
+      "repeat": -1,
+      "transition_function": "liner",
+      "after_functions": [],
+      "during_functions": [],
+      "before_functions": [],
+      "start_x": null,
+      "end_x": null,
+      "start_y": null,
+      "end_y": null
+    },
+    "obj_data": {
+      "color": "#333333",
+      "opacity": false
+    }
+  },
+  "hp_upgrade": {
+    "base_data": {
+      "name": "hp_upgrade",
+      "group": "shop_menu",
+      "class": "PyButton"
+    },
+    "rect_data": {
+      "anchor_point": "topleft",
+      "x_pos": 8,
+      "y_pos": 6,
+      "x_size": 14,
+      "y_size": 1,
+      "x_offset": 20,
+      "y_offset": 20,
+      "x_padding": 0,
+      "y_padding": 0
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_35",
+      "text": "HP Upgrade Level 1",
+      "antialias": false,
+      "color": "#333333",
+      "align": "center"
+    },
+    "transition_data": {
+      "duration": 0,
+      "delay": 0,
+      "repeat": -1,
+      "transition_function": "liner",
+      "after_functions": [],
+      "during_functions": [],
+      "before_functions": [],
+      "start_x": null,
+      "end_x": null,
+      "start_y": null,
+      "end_y": null
+    },
+    "obj_data": {
+      "active": false,
+      "disabled": false,
+      "base_color": "#ffffff",
+      "hover_color": "#dddddd",
+      "select_color": "#aaaaaa",
+      "disabled_color": "#000000",
+      "opacity": false
+    }
+  },
+  "damage_upgrade": {
+    "base_data": {
+      "name": "damage_upgrade",
+      "group": "shop_menu",
+      "class": "PyButton"
+    },
+    "rect_data": {
+      "anchor_point": "topleft",
+      "x_pos": 8,
+      "y_pos": 7,
+      "x_size": 14,
+      "y_size": 1,
+      "x_offset": 20,
+      "y_offset": 40,
+      "x_padding": 0,
+      "y_padding": 0
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_35",
+      "text": "Damage Upgrade Level 1",
+      "antialias": false,
+      "color": "#333333",
+      "align": "center"
+    },
+    "transition_data": {
+      "duration": 0,
+      "delay": 0,
+      "repeat": -1,
+      "transition_function": "liner",
+      "after_functions": [],
+      "during_functions": [],
+      "before_functions": [],
+      "start_x": null,
+      "end_x": null,
+      "start_y": null,
+      "end_y": null
+    },
+    "obj_data": {
+      "active": false,
+      "disabled": false,
+      "base_color": "#ffffff",
+      "hover_color": "#dddddd",
+      "select_color": "#aaaaaa",
+      "disabled_color": "#000000",
+      "opacity": false
+    }
+  },
+  "speed_upgrade": {
+    "base_data": {
+      "name": "speed_upgrade",
+      "group": "shop_menu",
+      "class": "PyButton"
+    },
+    "rect_data": {
+      "anchor_point": "topleft",
+      "x_pos": 8,
+      "y_pos": 8,
+      "x_size": 14,
+      "y_size": 1,
+      "x_offset": 20,
+      "y_offset": 60,
+      "x_padding": 0,
+      "y_padding": 0
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_35",
+      "text": "Speed Upgrade Level 1",
+      "antialias": false,
+      "color": "#333333",
+      "align": "center"
+    },
+    "transition_data": {
+      "duration": 0,
+      "delay": 0,
+      "repeat": -1,
+      "transition_function": "liner",
+      "after_functions": [],
+      "during_functions": [],
+      "before_functions": [],
+      "start_x": null,
+      "end_x": null,
+      "start_y": null,
+      "end_y": null
+    },
+    "obj_data": {
+      "active": false,
+      "disabled": false,
+      "base_color": "#ffffff",
+      "hover_color": "#dddddd",
+      "select_color": "#aaaaaa",
+      "disabled_color": "#000000",
+      "opacity": false
+    }
+  },
+  "firerate_upgrade": {
+    "base_data": {
+      "name": "firerate_upgrade",
+      "group": "shop_menu",
+      "class": "PyButton"
+    },
+    "rect_data": {
+      "anchor_point": "topleft",
+      "x_pos": 8,
+      "y_pos": 9,
+      "x_size": 14,
+      "y_size": 1,
+      "x_offset": 20,
+      "y_offset": 80,
+      "x_padding": 0,
+      "y_padding": 0
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_35",
+      "text": "FireRate Upgrade Level 1",
+      "antialias": false,
+      "color": "#333333",
+      "align": "center"
+    },
+    "transition_data": {
+      "duration": 0,
+      "delay": 0,
+      "repeat": -1,
+      "transition_function": "liner",
+      "after_functions": [],
+      "during_functions": [],
+      "before_functions": [],
+      "start_x": null,
+      "end_x": null,
+      "start_y": null,
+      "end_y": null
+    },
+    "obj_data": {
+      "active": false,
+      "disabled": false,
+      "base_color": "#ffffff",
+      "hover_color": "#dddddd",
+      "select_color": "#aaaaaa",
+      "disabled_color": "#000000",
+      "opacity": false
+    }
+  },
+  "bullet_upgrade": {
+    "base_data": {
+      "name": "bullet_upgrade",
+      "group": "shop_menu",
+      "class": "PyButton"
+    },
+    "rect_data": {
+      "anchor_point": "topleft",
+      "x_pos": 8,
+      "y_pos": 10,
+      "x_size": 14,
+      "y_size": 1,
+      "x_offset": 20,
+      "y_offset": 100,
+      "x_padding": 0,
+      "y_padding": 0
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_35",
+      "text": "Bullet Upgrade Level 1",
       "antialias": false,
       "color": "#333333",
       "align": "center"
