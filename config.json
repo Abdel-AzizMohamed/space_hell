@@ -40,6 +40,21 @@
       "function_path": "pyengine.libs.devtools.devtools:DevTools.toggle_tool",
       "event_type": "down:K_F12",
       "args": ["show_object_rect"]
+    },
+    "player_movement": {
+      "function_path": "events.gameplay:Player.player_movement",
+      "event_type": "none",
+      "args": []
+    },
+    "display_hp": {
+      "function_path": "events.gameplay:Player.display_hp",
+      "event_type": "none",
+      "args": []
+    },
+    "display_points": {
+      "function_path": "events.gameplay:Player.display_points",
+      "event_type": "none",
+      "args": []
     }
   },
   "sounds_data": {},
@@ -47,7 +62,8 @@
   "groups_data": {
     "global": 1,
     "main_menu": 1,
-    "shop_menu": 0
+    "shop_menu": 0,
+    "gameplay": 0
   },
   "path_data": {
     "save_data_path": "save_data",

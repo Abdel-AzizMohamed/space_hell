@@ -141,8 +141,8 @@ class Text:
 
         self.font_render = self._text_data.get("font").render(
             self._text_data.get("text"),
-            self._text_data.get("color"),
             self._text_data.get("antialias"),
+            self._text_data.get("color"),
         )
         self._font_size = self.font_render.get_rect().size
 

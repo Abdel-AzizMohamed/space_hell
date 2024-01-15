@@ -189,6 +189,11 @@
         "function_path": "events.menu_events:start_game",
         "event_type": "leftclick",
         "args": []
+      },
+      "load_player": {
+        "function_path": "events.gameplay:Player.load_player",
+        "event_type": "leftclick",
+        "args": ["player"]
       }
     },
     "text_data": {

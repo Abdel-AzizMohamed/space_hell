@@ -35,6 +35,7 @@ def toggle_shop(_):
 def start_game(_):
     """start the game"""
     Designer.toggle_exclude("main_menu")
+    Designer.toggle_exclude("gameplay")
 
 
 def calc_price(base: int, level: int) -> int:
