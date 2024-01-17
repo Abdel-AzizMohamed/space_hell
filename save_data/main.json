@@ -2,7 +2,7 @@
   "hp_upgrade": 2,
   "damage_upgrade": 1,
   "speed_upgrade": 6,
-  "firerate_upgrade": 1,
+  "firerate_upgrade": 5,
   "bullet_upgrade": 4,
   "points": 1,
   "hp": 10

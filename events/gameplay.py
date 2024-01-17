@@ -10,6 +10,7 @@ from pyengine.engine import PyEngine
 from pyengine.libs.designer.designer import Designer
 from pyengine import win_obj
 from pyengine.utils.json_handler import read_json
+from pyengine.utils.timer import Timer
 
 #### Type Hinting ####
 
@@ -61,6 +62,7 @@ class Player:
     current_x = 0
     current_y = 0
     is_shooting = False
+    firerate = None
 
     @staticmethod
     def load_player(_, player_name: str) -> None:
@@ -71,6 +73,9 @@ class Player:
         Player.player = Designer.get_element(player_name)
         Player.current_x = Player.player.rect.x
         Player.current_y = Player.player.rect.y
+        Player.firerate = Timer(
+            800 / PyEngine.save_data.get("main").get("data").get("firerate_upgrade")
+        )
 
     @staticmethod
     def player_movement() -> None:
@@ -108,10 +113,13 @@ class Player:
     @staticmethod
     def shoot_state(state):
         """Switch shooting state"""
-        Player.is_shooting = state
+        if Designer.exclude_groups.get("gameplay"):
+            Player.is_shooting = state
+            Player.firerate.start_timer()
 
     @staticmethod
     def shoot_bullets():
         """Shot bullets"""
-        if Player.is_shooting:
+        if Player.is_shooting and Player.firerate.check_timer():
             Bullet(Player.player, "enemy", 100, 1, Player.bullet_data)
+            Player.firerate.start_timer()
