@@ -187,12 +187,12 @@
     "event_data": {
       "game_start": {
         "function_path": "events.menu_events:start_game",
-        "event_type": "leftclick",
+        "event_type": "down:leftclick",
         "args": []
       },
       "load_player": {
         "function_path": "events.gameplay:Player.load_player",
-        "event_type": "leftclick",
+        "event_type": "down:leftclick",
         "args": ["player"]
       }
     },
@@ -246,12 +246,12 @@
     "event_data": {
       "display_shop": {
         "function_path": "events.menu_events:toggle_shop",
-        "event_type": "leftclick",
+        "event_type": "down:leftclick",
         "args": []
       },
       "refresh_upgrades": {
         "function_path": "events.menu_events:refresh_upgrades",
-        "event_type": "leftclick",
+        "event_type": "down:leftclick",
         "args": []
       }
     },
@@ -305,7 +305,7 @@
     "event_data": {
       "game_exit": {
         "function_path": "events.menu_events:exit_game",
-        "event_type": "leftclick",
+        "event_type": "down:leftclick",
         "args": []
       }
     },
@@ -402,7 +402,7 @@
     "event_data": {
       "buy_upgrade": {
         "function_path": "events.menu_events:buy_upgrade",
-        "event_type": "leftclick",
+        "event_type": "down:leftclick",
         "args": ["hp_upgrade"]
       }
     },
@@ -456,7 +456,7 @@
     "event_data": {
       "buy_upgrade": {
         "function_path": "events.menu_events:buy_upgrade",
-        "event_type": "leftclick",
+        "event_type": "down:leftclick",
         "args": ["damage_upgrade"]
       }
     },
@@ -510,7 +510,7 @@
     "event_data": {
       "buy_upgrade": {
         "function_path": "events.menu_events:buy_upgrade",
-        "event_type": "leftclick",
+        "event_type": "down:leftclick",
         "args": ["speed_upgrade"]
       }
     },
@@ -564,7 +564,7 @@
     "event_data": {
       "buy_upgrade": {
         "function_path": "events.menu_events:buy_upgrade",
-        "event_type": "leftclick",
+        "event_type": "down:leftclick",
         "args": ["firerate_upgrade"]
       }
     },
@@ -618,7 +618,7 @@
     "event_data": {
       "buy_upgrade": {
         "function_path": "events.menu_events:buy_upgrade",
-        "event_type": "leftclick",
+        "event_type": "down:leftclick",
         "args": ["bullet_upgrade"]
       }
     },

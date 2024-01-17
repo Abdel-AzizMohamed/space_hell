@@ -156,3 +156,16 @@ class Designer:
         else:
             Designer.exclude_groups[group_name] = 1
             Eventer.exclude_groups[group_name] = 1
+
+    @staticmethod
+    def remove_element(name: str) -> None:
+        """
+        Remove element with the given name
+
+        Arguments:
+            name: wanted element name
+        """
+        for elements in Designer.game_elements.values():
+            if name in elements:
+                del elements[name]
+                break

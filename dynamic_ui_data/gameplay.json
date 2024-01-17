@@ -1,0 +1,42 @@
+{
+  "bullet": {
+    "base_data": {
+      "name": "bullet",
+      "group": "boxGroup",
+      "class": "PyCircle"
+    },
+    "rect_data": {
+      "anchor_point": "topleft",
+      "x_pos": 1,
+      "y_pos": 1,
+      "x_offset": 0,
+      "y_offset": 0
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_35",
+      "text": "",
+      "antialias": false,
+      "color": "#ff0000",
+      "align": "center"
+    },
+    "transition_data": {
+      "duration": 0,
+      "delay": 0,
+      "repeat": -1,
+      "transition_function": "liner",
+      "after_functions": [],
+      "during_functions": [],
+      "before_functions": [],
+      "start_x": null,
+      "end_x": null,
+      "start_y": null,
+      "end_y": null
+    },
+    "obj_data": {
+      "color": "#FF0000",
+      "radius": 6.0,
+      "opacity": false
+    }
+  }
+}

@@ -1,6 +1,7 @@
 """Contains main menu events"""
 # pylint: disable=E1101
 ###### Python Packages ######
+import secrets
 import math
 from pygame.mouse import get_pos as mouse_pos
 
@@ -8,6 +9,7 @@ from pygame.mouse import get_pos as mouse_pos
 from pyengine.engine import PyEngine
 from pyengine.libs.designer.designer import Designer
 from pyengine import win_obj
+from pyengine.utils.json_handler import read_json
 
 #### Type Hinting ####
 
@@ -24,12 +26,41 @@ def calc_angle(object_1: tuple, object_2: tuple):
     return (x_angel, y_angel)
 
 
+class Bullet:
+    """Define a bullet"""
+
+    bullets = []
+
+    def __init__(self, source, target, speed, angel, element_attributes):
+        """Init a new bullet object"""
+        self.target = target
+        self.speed = speed
+        self.angel = angel
+
+        element_attributes["base_data"]["name"] = secrets.token_hex(8)
+        Designer.create_element(element_attributes)
+        self.element = Designer.get_element(
+            element_attributes.get("base_data").get("name")
+        )
+        self.element.rect.center = source.rect.center
+
+        Bullet.bullets.append(self)
+
+    @staticmethod
+    def move_bullets():
+        """Move all bullets"""
+        for bullet in Bullet.bullets:
+            bullet.element.rect.y -= bullet.speed * win_obj.delta_time
+
+
 class Player:
     """Define player"""
 
+    bullet_data = read_json("dynamic_ui_data/gameplay.json").get("bullet")
     player = None
     current_x = 0
     current_y = 0
+    is_shooting = False
 
     @staticmethod
     def load_player(_, player_name: str) -> None:
@@ -73,3 +104,14 @@ class Player:
         Designer.get_element("player_points").update_text(
             text=f"Points: {player_points}"
         )
+
+    @staticmethod
+    def shoot_state(state):
+        """Switch shooting state"""
+        Player.is_shooting = state
+
+    @staticmethod
+    def shoot_bullets():
+        """Shot bullets"""
+        if Player.is_shooting:
+            Bullet(Player.player, "enemy", 100, 1, Player.bullet_data)

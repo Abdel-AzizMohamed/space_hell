@@ -104,7 +104,7 @@ class PyButton(PyBase, Rectangle, Text):
             {
                 "button_select": {
                     "function_path": "pyengine.libs.eventer.ui_events:ButtonEvents.button_select",
-                    "event_type": "leftclick",
+                    "event_type": "down:leftclick",
                     "args": [],
                 }
             },

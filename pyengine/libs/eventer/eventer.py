@@ -112,15 +112,22 @@ class Eventer:
             event: event object from pygame to check for events
             event_type: event type (leftclick, rightclick)
         """
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            if event_type == "click":
+        if event_type.find(":") == -1:
+            return False
+
+        key_action, button = event_type.split(":")
+        buttons = {"leftclick": 1, "middleclick": 2, "rightclick": 3}
+
+        if buttons.get(button) is None:
+            return False
+
+        if event.type == pygame.MOUSEBUTTONDOWN and key_action == "down":
+            if event.button == buttons[button] or button == "click":
                 return True
-            if event.button == 1 and event_type == "leftclick":
+        if event.type == pygame.MOUSEBUTTONUP and key_action == "up":
+            if event.button == buttons[button] or button == "click":
                 return True
-            if event.button == 2 and event_type == "middleclick":
-                return True
-            if event.button == 3 and event_type == "rightclick":
-                return True
+
         return False
 
     @staticmethod
@@ -136,6 +143,10 @@ class Eventer:
             return False
 
         key_action, key = event_type.split(":")
+        buttons = {"leftclick": 1, "middleclick": 2, "rightclick": 3}
+
+        if buttons.get(key) is not None:
+            return False
 
         if event.type == pygame.KEYDOWN and key_action == "down":
             if event.key == getattr(pygame, key):
