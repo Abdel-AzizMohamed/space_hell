@@ -45,13 +45,26 @@ class Bullet:
         )
         self.element.rect.center = source.rect.center
 
+        self.current_x = self.element.rect.centerx
+        self.current_y = self.element.rect.centery
+
         Bullet.bullets.append(self)
 
     @staticmethod
     def move_bullets():
         """Move all bullets"""
         for bullet in Bullet.bullets:
-            bullet.element.rect.y -= bullet.speed * win_obj.delta_time
+            bullet.current_x += (
+                bullet.speed
+                * win_obj.delta_time
+                * -math.sin(math.radians(bullet.angel))
+            )
+            bullet.current_y += (
+                bullet.speed * win_obj.delta_time * math.cos(math.radians(bullet.angel))
+            )
+
+            bullet.element.rect.x = bullet.current_x
+            bullet.element.rect.y = bullet.current_y
 
 
 class Player:
@@ -63,6 +76,7 @@ class Player:
     current_y = 0
     is_shooting = False
     firerate = None
+    angel = 0
 
     @staticmethod
     def load_player(_, player_name: str) -> None:
@@ -121,5 +135,6 @@ class Player:
     def shoot_bullets():
         """Shot bullets"""
         if Player.is_shooting and Player.firerate.check_timer():
-            Bullet(Player.player, "enemy", 100, 1, Player.bullet_data)
+            Bullet(Player.player, "enemy", 100, Player.angel, Player.bullet_data)
             Player.firerate.start_timer()
+            Player.angel += 1
