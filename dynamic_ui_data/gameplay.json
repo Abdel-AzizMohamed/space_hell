@@ -38,5 +38,48 @@
       "radius": 6.0,
       "opacity": false
     }
+  },
+  "monster": {
+    "base_data": {
+      "name": "monster",
+      "group": "monsters",
+      "class": "PyRect"
+    },
+    "rect_data": {
+      "anchor_point": "topleft",
+      "x_pos": 4,
+      "y_pos": 4,
+      "x_size": 1,
+      "y_size": 1,
+      "x_offset": 0,
+      "y_offset": 0,
+      "x_padding": 0,
+      "y_padding": 0
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_35",
+      "text": "",
+      "antialias": false,
+      "color": "#ffffff",
+      "align": "top"
+    },
+    "transition_data": {
+      "duration": 1,
+      "delay": 1,
+      "repeat": 1,
+      "transition_function": "liner",
+      "after_functions": [],
+      "during_functions": [],
+      "before_functions": [],
+      "start_x": null,
+      "end_x": null,
+      "start_y": -200,
+      "end_y": 768
+    },
+    "obj_data": {
+      "color": "#333333",
+      "opacity": false
+    }
   }
 }

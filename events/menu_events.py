@@ -36,6 +36,7 @@ def start_game(_):
     """start the game"""
     Designer.toggle_exclude("main_menu")
     Designer.toggle_exclude("gameplay")
+    Designer.exclude_groups["shop_menu"] = 0
 
 
 def calc_price(base: int, level: int) -> int:

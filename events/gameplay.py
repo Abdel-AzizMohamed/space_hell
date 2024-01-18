@@ -2,6 +2,7 @@
 # pylint: disable=E1101
 # pylint: disable=R0913
 ###### Python Packages ######
+import random
 import secrets
 import math
 from pygame.mouse import get_pos as mouse_pos
@@ -99,6 +100,89 @@ class Bullet:
             return bullet
 
         return None
+
+
+class Monster:
+    """Define a Monster"""
+
+    win_timer = None
+    monster_attributes = read_json("dynamic_ui_data/gameplay.json").get("monster")
+    monster_data = PyEngine.save_data.get("monsters").get("data").get("main_stage")
+    current_monster_group = 0
+    monsters = []
+
+    def __init__(self, monster_type, monster_data, element_attributes):
+        """Init a new monster object"""
+        element_attributes["base_data"]["name"] = secrets.token_hex(8)
+
+        if monster_data.get("x_pos") == "random":
+            element_attributes["rect_data"]["x_pos"] = random.randint(0, 31)
+        if monster_data.get("y_pos") == "random":
+            element_attributes["rect_data"]["y_pos"] = random.randint(0, 17)
+        if monster_data.get("delay") == "random":
+            element_attributes["transition_data"]["delay"] = random.randint(1, 5)
+
+        Designer.create_element(element_attributes)
+        self.element = Designer.get_element(
+            element_attributes.get("base_data").get("name")
+        )
+
+        Monster.monsters.append(self)
+
+    @staticmethod
+    def spawn_monsters():
+        """Spawns monsters if the current monsters group are all dead"""
+        if not Monster.monsters and Designer.exclude_groups.get("gameplay"):
+            if len(Monster.monster_data) == Monster.current_monster_group:
+                Monster.display_win()
+                return
+
+            current_monsters = Monster.monster_data[Monster.current_monster_group]
+            Monster.current_monster_group += 1
+
+            for monster_type, monster_group in current_monsters.items():
+                for _ in range(monster_group.get("count")):
+                    Monster(monster_type, monster_group, Monster.monster_attributes)
+
+    @staticmethod
+    def check_monster_state():
+        """Check if the monster hp goes blow 0 or he reach the end of screen"""
+        dead_monsters = []
+        for monster in Monster.monsters:
+            mon_width, mon_height = monster.element.rect.size
+            mon_x = monster.element.rect.x
+            mon_left = monster.element.rect.left
+            mon_bottom = monster.element.rect.bottom
+
+            if mon_x <= 0 - mon_width or mon_left >= win_obj.screen_width + mon_width:
+                Designer.remove_element(monster.element.name)
+                dead_monsters.append(monster)
+            if mon_bottom >= win_obj.screen_height + mon_height:
+                Designer.remove_element(monster.element.name)
+                dead_monsters.append(monster)
+
+        for dead in dead_monsters:
+            Monster.monsters.remove(dead)
+
+    @staticmethod
+    def display_win():
+        """Display win menu"""
+        if Monster.win_timer is None:
+            Designer.toggle_exclude("win_menu")
+            Monster.win_timer = Timer(3500)
+            Monster.win_timer.start_timer()
+        elif Monster.win_timer.check_timer():
+            Monster.win_timer = None
+            Monster.return_to_menu()
+
+    @staticmethod
+    def return_to_menu():
+        """Win the game"""
+        Player.shoot_state(False)
+        Designer.toggle_exclude("win_menu")
+        Designer.toggle_exclude("main_menu")
+        Designer.toggle_exclude("gameplay")
+        Monster.current_monster_group = 0
 
 
 class Player:

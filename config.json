@@ -75,6 +75,16 @@
       "function_path": "events.gameplay:Player.shoot_bullets",
       "event_type": "none",
       "args": []
+    },
+    "monster_spawn": {
+      "function_path": "events.gameplay:Monster.spawn_monsters",
+      "event_type": "none",
+      "args": []
+    },
+    "monster_check": {
+      "function_path": "events.gameplay:Monster.check_monster_state",
+      "event_type": "none",
+      "args": []
     }
   },
   "sounds_data": {},
@@ -83,7 +93,8 @@
     "global": 1,
     "main_menu": 1,
     "shop_menu": 0,
-    "gameplay": 0
+    "gameplay": 0,
+    "win_menu": 0
   },
   "path_data": {
     "save_data_path": "save_data",
