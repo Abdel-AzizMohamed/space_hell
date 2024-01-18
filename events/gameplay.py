@@ -136,11 +136,22 @@ class Player:
         x_speed = (speed * 50 + 150) * win_obj.delta_time * x_angle
         y_speed = (speed * 50 + 150) * win_obj.delta_time * y_angle
 
-        Player.current_x += x_speed
-        Player.current_y += y_speed
-
-        Player.player.rect.centerx = Player.current_x
-        Player.player.rect.centery = Player.current_y
+        if (
+            Player.player.rect.centerx <= mouse_pos()[0] + 2
+            and Player.player.rect.centerx >= mouse_pos()[0] - 2
+        ):
+            Player.player.rect.centerx = mouse_pos()[0]
+        else:
+            Player.current_x += x_speed
+            Player.player.rect.centerx = Player.current_x
+        if (
+            Player.player.rect.centery <= mouse_pos()[1] + 2
+            and Player.player.rect.centery >= mouse_pos()[1] - 2
+        ):
+            Player.player.rect.centery = mouse_pos()[1]
+        else:
+            Player.current_y += y_speed
+            Player.player.rect.centery = Player.current_y
 
     @staticmethod
     def display_hp() -> None:
@@ -168,5 +179,24 @@ class Player:
     def shoot_bullets():
         """Shot bullets"""
         if Player.is_shooting and Player.firerate.check_timer():
-            Bullet(Player.player, "enemy", 500, 180, Player.bullet_data)
+            bullet_count = (
+                PyEngine.save_data.get("main").get("data").get("bullet_upgrade")
+            )
+            if bullet_count == 1:
+                Bullet(Player.player, "enemy", 500, 180, Player.bullet_data)
+            if bullet_count == 2:
+                Bullet(Player.player, "enemy", 500, 185, Player.bullet_data)
+                Bullet(Player.player, "enemy", 500, 175, Player.bullet_data)
+            if bullet_count >= 3:
+                Bullet(Player.player, "enemy", 500, 185, Player.bullet_data)
+                Bullet(Player.player, "enemy", 500, 180, Player.bullet_data)
+                Bullet(Player.player, "enemy", 500, 175, Player.bullet_data)
+            if bullet_count >= 4:
+                Bullet(Player.player, "enemy", 500, 195, Player.bullet_data)
+            if bullet_count >= 5:
+                Bullet(Player.player, "enemy", 500, 165, Player.bullet_data)
+            if bullet_count >= 6:
+                Bullet(Player.player, "enemy", 500, 183, Player.bullet_data)
+                Bullet(Player.player, "enemy", 500, 178, Player.bullet_data)
+
             Player.firerate.start_timer()
