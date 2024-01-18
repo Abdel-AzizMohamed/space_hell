@@ -1,5 +1,6 @@
 """Contains main menu events"""
 # pylint: disable=E1101
+# pylint: disable=R0913
 ###### Python Packages ######
 import secrets
 import math
@@ -53,6 +54,8 @@ class Bullet:
     @staticmethod
     def move_bullets():
         """Move all bullets"""
+        offside_bullets = []
+
         for bullet in Bullet.bullets:
             bullet.current_x += (
                 bullet.speed
@@ -66,6 +69,37 @@ class Bullet:
             bullet.element.rect.x = bullet.current_x
             bullet.element.rect.y = bullet.current_y
 
+            check = Bullet.check_bullet(bullet)
+
+            if check:
+                offside_bullets.append(check)
+
+        for bullet in offside_bullets:
+            Bullet.bullets.remove(bullet)
+
+    @staticmethod
+    def check_bullet(bullet):
+        """
+        Check if any bullets collide with the target or reach the end of the screen
+
+        Arguments:
+            bullet: bullet to check if it's collided
+        """
+        if (
+            bullet.element.rect.x <= 0
+            or bullet.element.rect.left >= win_obj.screen_width
+        ):
+            Designer.remove_element(bullet.element.name)
+            return bullet
+        if (
+            bullet.element.rect.y <= 0
+            or bullet.element.rect.bottom >= win_obj.screen_height
+        ):
+            Designer.remove_element(bullet.element.name)
+            return bullet
+
+        return None
+
 
 class Player:
     """Define player"""
@@ -76,7 +110,6 @@ class Player:
     current_y = 0
     is_shooting = False
     firerate = None
-    angel = 0
 
     @staticmethod
     def load_player(_, player_name: str) -> None:
@@ -135,6 +168,5 @@ class Player:
     def shoot_bullets():
         """Shot bullets"""
         if Player.is_shooting and Player.firerate.check_timer():
-            Bullet(Player.player, "enemy", 100, Player.angel, Player.bullet_data)
+            Bullet(Player.player, "enemy", 500, 180, Player.bullet_data)
             Player.firerate.start_timer()
-            Player.angel += 1

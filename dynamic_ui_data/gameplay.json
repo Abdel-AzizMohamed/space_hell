@@ -2,7 +2,7 @@
   "bullet": {
     "base_data": {
       "name": "bullet",
-      "group": "boxGroup",
+      "group": "bullets",
       "class": "PyCircle"
     },
     "rect_data": {
